@@ -1,0 +1,144 @@
+import java.util.Scanner;
+
+/* A CLASS FOR USERS BANK ACCOUNT */
+
+class USERACCOUNT{
+
+double account_bal=15000;
+
+void display(){
+
+System.out.println("YOUR CURRENT BALANCE IS "+account_bal);
+
+}
+}
+
+/*DEPOSITING THE MONEY*/
+
+class  DEPOSIT{
+
+USERACCOUNT A=new USERACCOUNT();
+
+Scanner s = new Scanner(System.in);
+
+void display2(){
+
+double Deposit_amt ;
+
+System.out.println("ENTER AMOUNT TO DEPOSIT ");
+
+Deposit_amt = s.nextDouble();
+
+double CURRENT_BAL =  A.account_bal + Deposit_amt;
+
+System.out.println("AFTER DEPOSITING YOUR AMOUNT IS "+CURRENT_BAL);
+
+System.out.println("THANKYOU VISIT AGAIN !");
+
+
+
+}}
+
+/*METHOD FOR WITHDRAWL OPTION*/
+
+class WITHDRAW{
+
+/*String op = JOPtionPane.showInputDialog("YOU HAVE SELECTED WITHDRAWL OPTION \n GO AHEAD ");
+
+JOptionPane.showMessageDialog (null , "DONE! "+op);*/
+
+USERACCOUNT A=new USERACCOUNT();
+
+Scanner s = new Scanner(System.in);
+
+double Withdraw_amt ;
+
+void display3(){
+
+System.out.println( "ENTER AMOUNT FOR WITHDRAWL ");
+
+Withdraw_amt = s.nextDouble(); 
+
+if(Withdraw_amt <= A.account_bal){
+
+System.out.println("YOU CAN WITHDRAW YOUR MONEY SAFELY");
+
+double CURRENT_BAL = A.account_bal - Withdraw_amt ;
+
+System.out.println("AND YOUR CURRENT ACCOUNT BALANCE IS "+CURRENT_BAL);
+
+
+}
+}
+}
+
+
+public class ATM{
+
+
+
+
+
+
+public static void main(String args[]){
+
+Scanner s = new Scanner(System.in);
+
+/*CONNECTING THE USERS ACCOUNT WITH ATM */
+
+int option;
+
+System.out.println("1.CLICK HERE TO WITHDRAW ");
+
+System.out.println("2.CLICK HERE TO DEPOSIT ");
+
+System.out.println("3.CLICK HERE TO CHECK BANK BALANCE ");
+
+System.out.println("4.EXIT");
+
+System.out.println("----------CHOOSE YOUR OPTION-----------");
+
+option = s.nextInt();
+
+switch(option){
+
+
+
+case 1:
+
+System.out.println("DONE! YOU HAVE SELECTED WITHDRAWL OPTION \n GO AHEAD ");
+
+WITHDRAW W = new WITHDRAW();
+
+W.display3();
+
+break;
+
+case 2:
+
+DEPOSIT d = new DEPOSIT();
+
+d.display2();
+
+break;
+
+case 3:
+
+USERACCOUNT A=new USERACCOUNT();
+
+A.display();
+
+break;
+
+case 4:
+
+break; 
+
+default:
+
+System.out.println("CHOOSE ANY ONE OF THE OPTION");
+
+break;
+}
+}
+}
